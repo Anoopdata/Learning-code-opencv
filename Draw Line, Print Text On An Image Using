@@ -1,0 +1,131 @@
+#Draw Line, Print Text On An Image Using
+In Python OpenCV Tutorial, Explained How to put text and Line over the image using python OpenCV cv2.line() function?
+
+Syntax: cv2.line(img, pt1, pt2, color[, thickness[, lineType[, shift]]])
+
+Parameters:
+
+.   @param img Image.
+.   @param pt1 First point of the line segment.
+.   @param pt2 Second point of the line segment.
+.   @param color Line color.
+.   @param thickness Line thickness.
+.   @param lineType Type of the line. See #LineTypes.
+.   @param shift Number of fractional bits in the point coordinates.
+
+
+************************************************************************************************************************************
+How to Draw Line and Text on Image
+
+Line On Image
+import cv2
+img_path = r"/home/intozi/Downloads/a.jpg"
+
+img = cv2.imread(img_path)
+ 
+img_resize = cv2.resize(img, (1280, 720))
+ 
+pt1 = (500, 140)
+pt2 = (1050, 140)
+color = (23,200,54)
+thickness = 50
+ 
+#line(img, pt1, pt2, color[, thickness[, lineType[, shift]]]) -> img
+cv2.line(img_resize, pt1, pt2, color, thickness)
+ 
+cv2.imshow("Model Image", img_resize)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+***************************************************************************************************************************************************8*
+Draw 2 lines on Image
+
+import cv2
+ 
+img_path = r"/home/intozi/Downloads/a.jpg"
+ 
+img = cv2.imread(img_path)
+ 
+img_resize = cv2.resize(img, (1280, 720))
+ 
+pt1 = (500, 140)
+pt2 = (1050, 140)
+color = (23,200,54)
+thickness = 50
+ 
+#line(img, pt1, pt2, color[, thickness[, lineType[, shift]]]) -> img
+cv2.line(img_resize, pt1, pt2, color, thickness)
+ 
+thickness2 = 5
+color2 = (12,43,200)
+cv2.line(img_resize, pt1, pt2, color2, thickness2)
+ 
+cv2.imshow("Model Image", img_resize)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+*********************************************************************************************************************************************************
+Draw multiple lines on Image
+
+import cv2
+ 
+img_path = r"/home/intozi/Downloads/a.jpg"
+ 
+img = cv2.imread(img_path)
+ 
+img_resize = cv2.resize(img, (1280, 720))
+ 
+pt1 = (500, 140)
+pt2 = (1050, 140)
+color = (23,200,54)
+thickness = 50
+ 
+#line(img, pt1, pt2, color[, thickness[, lineType[, shift]]]) -> img
+cv2.line(img_resize, pt1, pt2, color, thickness)
+ 
+thickness2 = 5
+color2 = (12,43,200)
+cv2.line(img_resize, pt1, pt2, color2, thickness2)
+ 
+ 
+pt1 = (500, 500)
+pt2 = (1050, 500)
+cv2.line(img_resize, pt1, pt2, color, thickness)
+cv2.line(img_resize, pt1, pt2, color2, thickness2)
+ 
+cv2.imshow("Model Image", img_resize)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+*********************************************************************************************************************************************************
+
+
+Line and Text on Image
+
+# Line with Text
+ 
+# Draw Line
+ 
+import cv2
+ 
+img_path = r"/home/intozi/Downloads/a.jpg"
+ 
+img = cv2.imread(img_path)
+ 
+img_resize = cv2.resize(img, (1280, 720))
+ 
+pt1 = (500, 140)
+pt2 = (1050, 140)
+color = (34,200,93)
+thickness = 8
+#line(img, pt1, pt2, color[, thickness[, lineType[, shift]]]) -> img
+cv2.line(img_resize, pt1, pt2, color, thickness)
+ 
+#putText(img, text, org, fontFace, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]]) -> img
+cv2.putText(img_resize, "Model Smile", (600, 120), cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 2, (34,200,200), 3)
+ 
+cv2.imshow("Model Image", img_resize)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
