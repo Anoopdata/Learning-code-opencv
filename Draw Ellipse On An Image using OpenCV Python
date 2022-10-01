@@ -1,0 +1,98 @@
+Draw Ellipse On An Image using OpenCV Python
+
+import cv2
+img_path = r"/home/intozi/Desktop/screen.jpg"
+img = cv2.imread(img_path)
+img_resize = cv2.resize(img,(1280,720))
+center = (300,200)
+axes = (100,200)
+
+angle = 30
+startAngle =0
+endAngle = 360
+color = (12,200,43)
+thickness = 4
+cv2.ellipse(img_resize,center,axes,angle,startAngle,endAngle,color,thickness)
+cv2.imshow("Model image",img_resize)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+***************************************************************************************************************************************************
+
+
+Fill Ellipse
+
+import cv2
+img_path = r"/home/intozi/Desktop/screen.jpg"
+img = cv2.imread(img_path)
+img_resize = cv2.resize(img,(1280,720))
+center = (300,200)
+axes = (100,200)
+angle = 30
+startAngle =0
+endAngle = 360
+color = (12,200,43)
+thickness = -1
+cv2.ellipse(img_resize,center,axes,angle,startAngle,endAngle,color,thickness)
+cv2.imshow("Model image",img_resize)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+                 ********************************************************************************************************************
+import cv2
+img_path = r"/home/intozi/Desktop/screen.jpg"
+img = cv2.imread(img_path)
+img_resize = cv2.resize(img,(1280,720))
+center = (300,200)
+axes = (100,200)
+angle = 30
+startAngle =100
+endAngle = 360
+color = (12,200,43)
+thickness = -1
+cv2.ellipse(img_resize,center,axes,angle,startAngle,endAngle,color,thickness)
+cv2.imshow("Model image",img_resize)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+  ***************************************************************************************************************************
+  Incomplete Empty Ellipse Arc
+  
+  import cv2
+img_path = r"/home/intozi/Desktop/screen.jpg"
+img = cv2.imread(img_path)
+img_resize = cv2.resize(img,(1280,720))
+center = (300,200)
+axes = (100,200)
+angle = 30
+startAngle =100
+endAngle = 360
+color = (12,200,43)
+thickness = 33
+cv2.ellipse(img_resize,center,axes,angle,startAngle,endAngle,color,thickness)
+cv2.imshow("Model image",img_resize)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+************************************************************************************************************************************
+Ellipse And Text
+import cv2
+img_path = r"/home/intozi/Desktop/screen.jpg"
+img = cv2.imread(img_path)
+img_resize = cv2.resize(img,(1280,720))
+center = (300,200)
+axes = (100,200)
+angle = 30
+startAngle =0
+endAngle = 360
+color = (12,200,43)
+thickness = 5
+cv2.ellipse(img_resize,center,axes,angle,startAngle,endAngle,color,thickness)
+cv2.putText(img_resize, "Model smile",(600,280),cv2.FONT_HERSHEY_COMPLEX,2,(34,200,200),3)
+cv2.imshow("Model image",img_resize)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+  
