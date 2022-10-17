@@ -1,0 +1,151 @@
+Blur Image Using Filter2d OpenCV Python
+
+Get the answers of below questions:
+
+How do I blur an image in OpenCV?
+How do you blur an image in Python?
+Why do we blur image?
+How do you blur part of a picture?
+
+Syntax:
+
+cv2.filter2D(src, ddepth, kernel[, dst[, anchor[, delta[, borderType]]]]) -> dst
+
+Parameters:
+ @param src input image.
+.   @param dst output image of the same size and the same number of channels as src.
+.   @param ddepth desired depth of the destination image, see @ref filter_depths "combinations"
+.   @param kernel convolution kernel (or rather a correlation kernel), a single-channel floating point
+.   matrix; if you want to apply different kernels to different channels, split the image into
+.   separate color planes using split and process them individually.
+.   @param anchor anchor of the kernel that indicates the relative position of a filtered point within
+.   the kernel; the anchor should lie within the kernel; default value (-1,-1) means that the anchor
+.   is at the kernel center.
+.   @param delta optional value added to the filtered pixels before storing them in dst.
+.   @param borderType pixel extrapolation method, see #BorderTypes
+.   @sa  sepFilter2D, dft, matchTemplate
+
+************************************************************************************************
+Blur Image using Filter2D with 3×3 kernel
+# Show Image
+import cv2
+import numpy as np
+ 
+img_path = r"C:\Users\kashz\AI Life\AI Projects - IAIP, PTs (Web + Channel)\02 OpenCV\000 opencv tutorial\data\images\adult-beauty-blond-301298.jpg"
+ 
+img = cv2.imread(img_path)
+img = cv2.resize(img, (1280, 720))
+ 
+cv2.imshow("Model Image", img)
+ 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+*******************************************************************************
+mport cv2
+import numpy as np
+img_path = '/home/intozi/Downloads/a.jpg'
+img = cv2.imread(img_path)
+one_mat_3_3 = np.ones((3,3), dtype=np.float32)/9
+blur_img_3_3 = cv2.filter2D(img, -1, one_mat_3_3)
+ 
+ 
+cv2.imshow("Blure image 3x3", blur_img_3_3)
+cv2.imshow("Original Image", img)
+ 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+****************************************************************************
+Blur Image using Filter2D with 5×5 kernel
+
+import cv2
+import numpy as np
+img_path = '/home/intozi/Downloads/a.jpg'
+img = cv2.imread(img_path)
+one_mat_5_5 = np.ones((5,5), dtype=np.float32)/25
+blur_img_5_5 = cv2.filter2D(img, -1, one_mat_5_5)
+ 
+ 
+cv2.imshow("Blure image 5x5", blur_img_5_5)
+cv2.imshow("Original Image", img)
+ 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+***********************************************
+Blur Image using Filter2D with 10×10 kernel
+import cv2
+import numpy as np
+img_path = '/home/intozi/Downloads/a.jpg'
+img = cv2.imread(img_path)
+ #10*10
+one_mat_10_10 = np.ones((10,10), dtype=np.float32)/100
+ 
+blur_img_10_10 = cv2.filter2D(img, -1, one_mat_10_10)
+ 
+cv2.imshow("Original Image", img)
+cv2.imshow("Blure Image using", blur_img_10_10)
+ 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+********************************************************************
+Blur Image using Filter2D with 50×50 kernel
+
+import cv2
+import numpy as np
+img_path = '/home/intozi/Downloads/a.jpg'
+img = cv2.imread(img_path)
+ # 50*50
+one_mat_50_50 = np.ones((50,50), dtype=np.float32)/2500
+ 
+blur_img_50_50 = cv2.filter2D(img, -1, one_mat_50_50)
+ 
+cv2.imshow("Original Image", img)
+cv2.imshow("Blure Image using", blur_img_50_50)
+ 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+***********************************************************************
+Blur Image using Filter2D with 100×100 kernel
+
+
+
+import cv2
+import numpy as np
+img_path = '/home/intozi/Downloads/a.jpg'
+img = cv2.imread(img_path)
+ # 100*100
+one_mat_100_100 = np.ones((100,100), dtype=np.float32)/10000
+ 
+blur_img_100_100 = cv2.filter2D(img, -1, one_mat_100_100)
+ 
+cv2.imshow("Original Image", img)
+cv2.imshow("Blure Image using", blur_img_100_100)
+ 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+************************************************************************
+Show All Result in Single Windows(Image)
+## Show All image Result in Single Windows(Image)
+ 
+img = cv2.resize(img, (400, 350))
+blur_img_3_3 = cv2.resize(blur_img_3_3, (400, 350))
+blur_img_5_5 = cv2.resize(blur_img_5_5, (400, 350))
+blur_img_10_10 = cv2.resize(blur_img_10_10, (400, 350))
+blur_img_50_50 = cv2.resize(blur_img_50_50, (400, 350))
+blur_img_100_100 = cv2.resize(blur_img_100_100, (400, 350))
+ 
+cv2.putText(img, "Original", org=(20,40), fontFace=cv2.FONT_HERSHEY_PLAIN, fontScale= 2 , color=(0,0,255))
+cv2.putText(blur_img_3_3, "3x3 Filter", org=(20,40), fontFace=cv2.FONT_HERSHEY_PLAIN, fontScale= 2 , color=(255,0,255))
+cv2.putText(blur_img_5_5, "5x5 Filter", org=(20,40), fontFace=cv2.FONT_HERSHEY_PLAIN, fontScale= 2 , color=(255,0,255))
+cv2.putText(blur_img_10_10, "10x10 Filter", org=(20,40), fontFace=cv2.FONT_HERSHEY_PLAIN, fontScale= 2 , color=(255,0,255))
+cv2.putText(blur_img_50_50, "50x50 Filter", org=(20,40), fontFace=cv2.FONT_HERSHEY_PLAIN, fontScale= 2 , color=(255,0,255))
+cv2.putText(blur_img_100_100, "100x100 Filter", org=(20,40), fontFace=cv2.FONT_HERSHEY_PLAIN, fontScale= 2 , color=(255,0,255))
+ 
+img1_3 = np.hstack((img, blur_img_3_3, blur_img_5_5))
+img2_3 = np.hstack((blur_img_10_10, blur_img_50_50,blur_img_100_100))
+ 
+img3_6 = np.vstack((img1_3,img2_3))
+ 
+cv2.imshow("1 original and 5 Blur Image", img3_6)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
